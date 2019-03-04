@@ -2,12 +2,10 @@ html,
 body {
   display: flex;
   flex-direction: column;
-  font-size: 3em;
+  font-size: 1vw;
   height: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-  "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: Arial, sans-serif;
   overflow: hidden;
 }
 
@@ -21,7 +19,7 @@ p {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  overflow: auto !important;
+  overflow: auto;
 }
 
 .content {
@@ -56,22 +54,27 @@ p {
           color: #0056b3;
           text-decoration: underline;
         }
+
+        &__svg {
+          width: 5vh;
+          height: 5vh;
+        }
       }
     }
   }
 }
 
+
 .container {
   background-color: darkgrey;
   width: 80%;
-  padding-right: 0.396875cm;
-  padding-left: 0.396875cm;
+  padding-right: 2em;
+  padding-left: 2em;
   margin-right: auto;
   margin-left: auto;
 }
 
 .footer {
-
   height: 7vh;
   width: 100%;
   background-color: #d3d3d3;
@@ -106,6 +109,17 @@ p {
   display: none;
 }
 
+.modal-wrapper {
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-state:checked + .wrapper .modal-wrapper {
+  opacity: 1;
+  visibility: visible;
+}
+
 .modal-state:checked + .wrapper .modal {
   opacity: 1;
   visibility: visible;
@@ -126,7 +140,7 @@ p {
   margin: auto;
   overflow: auto;
   background: #fff;
-  border-radius: 0.1cm;
+  border-radius: 0.3em;
   padding: 1em 2em;
   height: 50%;
   resize: both;
@@ -145,13 +159,13 @@ p {
 .modal__close:before {
   content: "";
   position: absolute;
-  width: 0.05cm;
+  width: 0.3em;
   height: 1.5em;
   background: #ccc;
   display: block;
   transform: rotate(45deg);
   left: 50%;
-  margin: -0.079375cm 0 0 -0.02cm;
+  margin: -.3em 0 0 -0.7em;
   top: 0;
 }
 
@@ -167,27 +181,20 @@ p {
 @media screen and (max-width: 33.866cm) {
   .container {
     width: 100%;
-    padding: 0 !important;
-    margin: 0 !important;
+    padding: 0;
+    margin: 0;
   }
 }
 
 @media screen and (max-width: 24.2cm) {
   .modal__inner {
-    width: auto !important;
+    width: auto;
     height: 50%;
     box-sizing: border-box;
   }
 }
 
-@media screen and (min-width: 3cm) and (max-width: 35.6875cm), screen and (min-height: 18cm) {
-  html,
-  body {
-    font-size: 2vh;
-  }
-}
-
-@media screen and (min-width: 35.6875cm) and (max-width: 108cm) {
+@media screen and (max-width: 35.6875cm) {
   html,
   body {
     font-size: 2vh;
@@ -197,6 +204,8 @@ p {
 @media screen and (min-width: 108cm) {
   html,
   body {
-    font-size: 2vh;
+    font-size: 1.5vw;
   }
 }
+
+
